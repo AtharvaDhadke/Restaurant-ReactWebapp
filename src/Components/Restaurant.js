@@ -1,67 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./style.css"
 import Menu from './menuApi'
+import MenuCard from './MenuCard';
 
 function Restaurant() {
-  return (
-    <div>
-      <div className="card-container">
-        <div className="card">
-            <div className="card-body">
-                <span className="card-number card-circle subtle">1</span>
-                <span className="card-author subtle">Dinner</span>
-                <h2 className="card-title">Biryani</h2>
-                <span className="card-description subtle">Cooked rice with a flavour of chicken</span>
-                <div className="card-read">Read</div>
-            </div>
-            <img src="" alt="images" className="card-media" />
-            <span className="card-tag subtle"> Order Now</span>
+    const [menuData, setmenuData] = useState(Menu);
+    console.log(menuData);
+    return (
+    <>
+    <div className="navbar">
+        <div className="btn-group">
+            <button className="btn-group__item">Breakfast</button>
+            <button className="btn-group__item">Lunch</button>
+            <button className="btn-group__item">Evening</button>
+            <button className="btn-group__item">Dinner</button>
+            <button className="btn-group__item">All</button>
         </div>
-      </div>
-
-      <div className="card-container">
-        <div className="card">
-            <div className="card-body">
-                <span className="card-number card-circle subtle">1</span>
-                <span className="card-author subtle">Dinner</span>
-                <h2 className="card-title">Biryani</h2>
-                <span className="card-description subtle">Cooked rice with a flavour of chicken</span>
-                <div className="card-read">Read</div>
-            </div>
-            <img src="" alt="images" className="card-media" />
-            <span className="card-tag subtle"> Order Now</span>
-        </div>
-      </div>
-
-      <div className="card-container">
-        <div className="card">
-            <div className="card-body">
-                <span className="card-number card-circle subtle">1</span>
-                <span className="card-author subtle">Dinner</span>
-                <h2 className="card-title">Biryani</h2>
-                <span className="card-description subtle">Cooked rice with a flavour of chicken</span>
-                <div className="card-read">Read</div>
-            </div>
-            <img src="" alt="images" className="card-media" />
-            <span className="card-tag subtle"> Order Now</span>
-        </div>
-      </div>
-
-      <div className="card-container">
-        <div className="card">
-            <div className="card-body">
-                <span className="card-number card-circle subtle">1</span>
-                <span className="card-author subtle">Dinner</span>
-                <h2 className="card-title">Biryani</h2>
-                <span className="card-description subtle">Cooked rice with a flavour of chicken</span>
-                <div className="card-read">Read</div>
-            </div>
-            <img src="" alt="images" className="card-media" />
-            <span className="card-tag subtle"> Order Now</span>
-        </div>
-      </div>
     </div>
-  )
+     <MenuCard menuData={menuData} />
+     </>
+    )
 }
 
 export default Restaurant
